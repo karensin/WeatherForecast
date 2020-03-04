@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from 'react-bootstrap/Button';
 
 const scales = {
     KELVIN: 'kelvin', 
@@ -15,9 +16,20 @@ const Weather = props => {
     //tempScale is the scale we want to convert to
     const [tempScale, setTempScale]= useState(scales.FAHRENHEIT) 
     // const [location, setLocation]= useState(location.city) 
+ 
+
+    function onClickConvertScale(){
+         if(tempScale===scales.FAHRENHEIT){
+            setTempScale(scales.CELSIUS)
+        }
+        if(tempScale===scales.CELSIUS){
+             setTempScale(scales.FAHRENHEIT)
+        }
+    }
 
     return (
         <div className="container">
+        <Button onClick={onClickConvertScale}/>
             <div className="cards"></div>
             <h1> {props.city} </h1>
             <h2 className="py-4">
@@ -38,18 +50,21 @@ const Weather = props => {
     );
     function convertTemp(temp){
         let newTemp 
+        let dec = ''
        if(tempScale===scales.CELSIUS){
-            newTemp=calCelsius(temp) 
+            newTemp=calCelsius(temp)
+            dec= 'C' 
        }
        if(tempScale===scales.FAHRENHEIT){
-            newTemp=getFahrenheit(temp)
+            newTemp= getFahrenheit(temp)
+            dec= 'F'
         }
         if(tempScale===scales.KELVIN){  
             newTemp=temp
         }
          return (
             <div>
-                {newTemp}
+                {newTemp} {dec} &deg;
              </div>
         );
     }
