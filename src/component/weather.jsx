@@ -17,37 +17,42 @@ const Weather = props => {
     const [tempScale, setTempScale]= useState(scales.FAHRENHEIT) 
     // const [location, setLocation]= useState(location.city) 
  
-
     function onClickConvertScale(){
-         if(tempScale===scales.FAHRENHEIT){
+
+        if(tempScale===scales.FAHRENHEIT){
             setTempScale(scales.CELSIUS)
         }
         if(tempScale===scales.CELSIUS){
              setTempScale(scales.FAHRENHEIT)
         }
+
     }
 
     return (
         <div className="container">
-        <Button onClick={onClickConvertScale}/>
+        <div className=" d-flex justify-content-end">
+        <Button  onClick={onClickConvertScale} > C </Button> 
+        </div>
             <div className="cards"></div>
             <h1> {props.city} </h1>
             <h2 className="py-4">
-                <i className="wi wi-day-sunny" />
+                <i className="wi wi-day-sunny" /> 
             </h2>
-
             <h1 className="py-2"> {convertTemp(currentTemp)} </h1>
-             
+                  
             {/** show max n min temp*/}
-            <span> 
-              <div className="py-2 d-flex justify-content-around">{convertTemp(tempMin)} </div>
-              <div className="py-2 d-flex justify-content-around"> {convertTemp(tempMax)}</div>
-            </span>
+            <div> 
+              <h1 className="px-4 d-flex justify-content-around">  
+              {convertTemp(tempMin)}  
+                {convertTemp(tempMax)}  
+              </h1>
+            </div>
 
             {/* Weather description */}
             <h4 className="py-3">  {description} </h4>
         </div>
     );
+    
     function convertTemp(temp){
         let newTemp 
         let dec = ''
