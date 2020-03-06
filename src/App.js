@@ -28,7 +28,7 @@ function App() {
     console.log(e.target.value)
     setInput(e.target.value)
   }
-  function onSubmitSearchCity(e){
+  function onSubmitSearchCity(e, name) {
     console.log('onSubmitSearchCity called')
 
     setTempCity(input)
@@ -71,7 +71,7 @@ function App() {
 
     <div className="App" >
       <header className="App-header">
-        <Form onSubmit={(e) => onSubmitSearchCity(e)}  >
+        <Form onSubmit={onSubmitSearchCity}  >
           <Form.Row>
             <Col>
               <Form.Control onChange={onChangeSearchCity}  name="city" type="text" placeholder="City"> 

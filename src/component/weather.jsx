@@ -11,7 +11,32 @@ const location ={
     city: undefined 
 }
  
+
 const Weather = props => {
+   
+    
+    function convertTemp(temp ){
+     let dec = ''
+        let newTemp 
+        
+       if(tempScale===scales.CELSIUS){
+            newTemp=calCelsius(temp)
+            dec= 'C' 
+       }
+       if(tempScale===scales.FAHRENHEIT){
+            newTemp= getFahrenheit(temp)
+            dec= 'F'
+        }
+        if(tempScale===scales.KELVIN){  
+            newTemp=temp
+        }
+         return (
+            <div>
+                {newTemp} {dec} &deg;
+             
+             </div>
+        );
+    }
     const {currentTemp,tempMin,tempMax,description} = props 
     //tempScale is the scale we want to convert to
     const [tempScale, setTempScale]= useState(scales.FAHRENHEIT) 
@@ -31,7 +56,7 @@ const Weather = props => {
     return (
         <div className="container">
         <div className=" d-flex justify-content-end">
-        <Button  onClick={onClickConvertScale} > C </Button> 
+       
         </div>
             <div className="cards"></div>
             <h1> {props.city} </h1>
@@ -49,56 +74,17 @@ const Weather = props => {
             </div>
 
             {/* Weather description */}
-            <h4 className="py-3">  {description} </h4>
+            <h4 className="py-3 ">  
+            {description} 
+               </h4>
+               <div className="d-flex justify-content-end"> 
+             <Button className= "" onClick= {onClickConvertScale} > C </Button> 
+             </div>
+                  
         </div>
     );
+            
     
-    function convertTemp(temp){
-        let newTemp 
-        let dec = ''
-       if(tempScale===scales.CELSIUS){
-            newTemp=calCelsius(temp)
-            dec= 'C' 
-       }
-       if(tempScale===scales.FAHRENHEIT){
-            newTemp= getFahrenheit(temp)
-            dec= 'F'
-        }
-        if(tempScale===scales.KELVIN){  
-            newTemp=temp
-        }
-         return (
-            <div>
-                {newTemp} {dec} &deg;
-             </div>
-        );
-    }
-
-    // function minmaxTemp(min, max) {
-    //     let newMin
-    //     let newMax
-    //     //convert to celcius only when tempScale is celsius 
-    //     if(tempScale===scales.CELSIUS){
-    //         newMin=calCelsius(min)
-    //         newMax=calCelsius(max)
-    //     }
-    //     if(tempScale===scales.FAHRENHEIT){
-    //         newMin=getFahrenheit(min)
-    //         newMax=getFahrenheit(max)
-    //     }
-    //     if(tempScale===scales.KELVIN){
-    //         newMin=min
-    //         newMax=max
-    //     }
-
-    //     return (
-    //         <h3>
-    //             <span className="px-4">{newMin}&deg;</span>
-    //             <span className="px-4">{newMax}&deg;</span>
-    //         </h3>
-    //     );
-
-    // }
 
 }
 export default Weather;
