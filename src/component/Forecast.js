@@ -67,18 +67,18 @@ export default function Forecast() {
             // console.log(day1[0].main.temp_min)
 
             function findMin() {
+                let day_min_maxes = []
                 for (let i = 0; i < days.length; i++) {
                     console.log(days[i], 'first for loop')
                     let day = days[i]
-                    for (let j = 0; j < day.length; j++) {
-                        let minTemp = day[j].main.temp_min
-
-                    }
+                    let hours = day.map(hour => hour.main.temp_min)
+                    let max = Math.max(...hours)
+                    let min = Math.min(...hours)
+                    day_min_maxes.push({ min: min, max: max });
                 }
-
-
+                return day_min_maxes;
             }
-            findMin()
+            console.log(findMin());
         }
 
         getforecast();
