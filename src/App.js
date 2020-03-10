@@ -13,20 +13,29 @@ let location = {
   city: 'San Francisco',
 
 }
-const cnt = 10
 
+const icon1 = {
+  Thunderstorm: "wi-thunderstorm",
+  Drizzle: "wi-sleet",
+  Rain: "wi-storm-showers",
+  Snow: "wi-snow",
+  Atmosphere: "wi-fog",
+  Clear: "wi-day-sunny",
+  Clouds: "wi-day-fog"
+};
 
 function App() {
   const [currentTemp, setCurrentTemp] = useState()
   const [city, setCity] = useState(location.city);
   const [tempCity, setTempCity] = useState(location.city);
-  const [state, setState] = useState();
   const [tempMin, setTempMin] = useState(0);
   const [tempMax, setTempMax] = useState(0);
   const [description, getDescription] = useState()
   const [input, setInput] = useState('')
+  const [icon, setIcon] = useState('')
+
   function onChangeSearchCity(e) {
-    // console.log(e.target.value) 
+
     console.log(e.target.value)
     setInput(e.target.value)
   }
@@ -52,17 +61,22 @@ function App() {
       if (response.cod !== 200) {
         return
 
-      }
-      setCity(tempCity)
 
+      }
+      console.log(response)
+      setCity(tempCity)
 
       setTempMin(response.main.temp_min)
 
       setTempMax(response.main.temp_max)
 
-      getDescription(response.weather[0].main)
+      getDescription(response.weather[0].description)
 
       setCurrentTemp(response.main.temp)
+
+      setIcon(response.weather[0].main)
+
+
     }
     getCurrentWeather();
   }, [tempCity]);
@@ -73,11 +87,14 @@ function App() {
 
 
 
-  return (
 
-    <div className="App" >
-      <header className="App-header">
-        <Container >
+
+  return (
+    <div className="App " >
+      <header className="App-header background" role="main" style={{
+        background: `url("${process.env.PUBLIC_URL + 'background.jpg'}") no-repeat center / cover `
+      }}  >
+        <Container  >
           <Form onSubmit={onSubmitSearchCity}  >
             <Form.Row className="px-4 d-flexcenter">
               <Col className="pd-25">
@@ -89,13 +106,13 @@ function App() {
             </Button>
             </Form.Row>
           </Form>
-          <Weather tempMin={tempMin} tempMax={tempMax} city={city}
+          <Weather icon={icon1[icon]} tempMin={tempMin} tempMax={tempMax} city={city}
             description={description} currentTemp={currentTemp}
           />
         </Container>
 
       </header>
-      <Forecast />
+      <Forecast tempCity={tempCity} />
     </div >
   );
 }

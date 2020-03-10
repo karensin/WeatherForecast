@@ -11,10 +11,7 @@ const location = {
     city: undefined
 }
 
-
 const Weather = props => {
-
-
     function convertTemp(temp) {
         let dec = ''
         let newTemp
@@ -57,28 +54,29 @@ const Weather = props => {
 
         < div className="container body">
             <div className="cards"></div>
-            <h1> {props.city} </h1>
+            <div className="cityHeader"> {props.city} </div>
             <h2 className="py-4">
-                <i className="wi wi-day-sunny" />
+                <i className={`wi ${props.icon}`} />
             </h2>
-            <h1 className="py-2"> {convertTemp(currentTemp)} </h1>
+            <h2 className="py-2"> Current {convertTemp(currentTemp)} </h2>
 
             {/** show max n min temp*/}
             <div>
-                <h1 className="px-4 d-flex justify-content-around">
-                    {convertTemp(tempMin)}
-                    {convertTemp(tempMax)}
-                </h1>
+                <h2 className=" d-flex justify-content-around">
+                    <div> min{convertTemp(tempMin)}</div>
+                    <div>max{convertTemp(tempMax)}</div>
+                </h2>
             </div>
 
             {/* Weather description */}
-            <h4 className="py-3 ">
+            <h3 className="py-3 ">
                 {description}
-            </h4>
+            </h3>
             <div className="d-flex justify-content-end">
-                <Button className="" onClick={onClickConvertScale} > C </Button>
+                <Button className="clear" variant="light" onClick={onClickConvertScale} > C / F </Button>
+
             </div>
-        </div>
+        </div >
 
     );
 
