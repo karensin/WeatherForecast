@@ -15,7 +15,7 @@ let location = {
 
 }
 
-const icon1 = {
+export const icon1 = {
   Thunderstorm: "wi-thunderstorm",
   Drizzle: "wi-sleet",
   Rain: "wi-storm-showers",

@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { calCelsius, getFahrenheit } from "./weather";
 import { Container } from 'react-bootstrap';
 import ForecastCard from './ForecastCard';
-
+import { icon1 } from '../App'
 
 
 const API_Key = "3bd8c061d50496738722309b7ed91dda";
@@ -18,12 +18,13 @@ const daysString = {
     6: 'Sat'
 }
 
+
 export default function Forecast(props) {
 
     const [currentTemp, setCurrentTemp] = useState()
     const [tempMin, setTempMin] = useState([]);
     const [tempMax, setTempMax] = useState([]);
-    const [description, getDescription] = useState()
+    const [description, getDescription] = useState([])
     const [input, setInput] = useState(0)
     const [time, getTime] = useState()
     const [day, getDay] = useState([])
@@ -57,11 +58,6 @@ export default function Forecast(props) {
 
             getDay([...forecast])
 
-            // setTempMin(response.main.temp_min)
-
-            // setTempMax(response.main.temp_max)
-
-            // getDescription(response.weather[0].main)
 
             // setCurrentTemp(response.main.temp)
             // console.log(response.list[0].dt)
@@ -78,9 +74,8 @@ export default function Forecast(props) {
             }
 
 
-
             let days = splitDays(response.list, 8)
-            console.log(days, 'days')
+
             //location of the temp_min 
             // console.log(day1[0].main.temp_min)
             // let max = Math.max(...hours)
@@ -111,6 +106,11 @@ export default function Forecast(props) {
             }
 
 
+            const desList = [days[0][0].weather[0].main, days[1][0].weather[0].main, days[2][0].weather[0].main, days[3][0].weather[0].main, days[4][0].weather[0].main]
+
+
+
+
             const min = findMin(days).map(item =>
                 <div>{getFahrenheit(item.min)}</div>
             )
@@ -120,6 +120,7 @@ export default function Forecast(props) {
 
             setTempMin([...min])
             setTempMax([...max])
+            getDescription([...desList])
             // tempMin = [...result]
         }
         getforecast();
@@ -129,7 +130,7 @@ export default function Forecast(props) {
         <body className="forecast">
             <Container className="forecast">
                 <div class="d-flex flex-row d-flex justify-content-around">
-                    <ForecastCard tempMin={tempMin} tempMax={tempMax} day={day} />
+                    <ForecastCard tempMin={tempMin} tempMax={tempMax} day={day} description={description} />
                 </div>
             </Container >
         </body>

@@ -3,7 +3,9 @@ import React from 'react'
 import { Card, Icon, Image } from 'semantic-ui-react'
 import { Container, Row, Col } from 'react-bootstrap';
 
+
 const ForecastCard = (props) => (
+
     <Container fluid={true}>
         <Row className='projectsBox'>
             <Col className="forecastcards">
@@ -11,13 +13,12 @@ const ForecastCard = (props) => (
 
                     <Card.Content>
                         <Card.Header> {props.day[0]} <i className="wi wi-snow" />  </Card.Header>
-
                         <Card.Meta>
                             <div className='min' > {props.tempMin[0]} </div>
                             <div className='max'> {props.tempMax[0]} </div>
                         </Card.Meta>
                         <Card.Description>
-
+                            {props.description[0]}
                         </Card.Description>
                     </Card.Content>
                     <Card.Content extra>
@@ -33,7 +34,7 @@ const ForecastCard = (props) => (
                             <div className='max'> {props.tempMax[1]} </div>
                         </Card.Meta>
                         <Card.Description>
-
+                            {props.description[1]}
                         </Card.Description>
                     </Card.Content>
                     <Card.Content extra>
@@ -49,7 +50,7 @@ const ForecastCard = (props) => (
                             <div className='max'> {props.tempMax[2]} </div>
                         </Card.Meta>
                         <Card.Description>
-
+                            {props.description[2]}
                         </Card.Description>
                     </Card.Content>
                     <Card.Content extra>
@@ -65,7 +66,7 @@ const ForecastCard = (props) => (
                             <div className='max'> {props.tempMax[3]} </div>
                         </Card.Meta>
                         <Card.Description>
-
+                            {props.description[3]}
                         </Card.Description>
                     </Card.Content>
                     <Card.Content extra>
@@ -82,10 +83,11 @@ const ForecastCard = (props) => (
                             <div className='max'> {props.tempMax[4]} </div>
                         </Card.Meta>
                         <Card.Description>
-
+                            {props.description[4]}
                         </Card.Description>
                     </Card.Content>
                     <Card.Content extra>
+
                     </Card.Content>
                 </Card>
             </Col>
