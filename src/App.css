@@ -2,6 +2,7 @@
   text-align: center;
   font-weight: 500;
   font-size: 1px ;
+  background-color: #234361;
 }
 
 .App-logo {
@@ -11,19 +12,20 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: white;
+  background-color: #234361;
 }
 
 .App-link {
   color: #61dafb;
 }
 
- 
+
 header{
   background-color: grey;
   background-blend-mode: screen, difference, lighten;
@@ -39,5 +41,18 @@ h1 {
   padding-top: 50px;
 }
 div{
-  padding-top: 10px;
+  padding-top: 5px;
+} 
+
+.forecast {
+  font-size: 20px;
+  background-color: #425A70;
+  min-height: 50vh;
+  color: white
+}
+
+.forecastcards.col{
+  width: 20%;
+  max-width: 25%;
+  height: fit-content;
 }

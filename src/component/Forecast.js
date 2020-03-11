@@ -1,10 +1,22 @@
 import React from 'react'
 import { useState, useEffect, useRef } from 'react';
+import { calCelsius, getFahrenheit } from "./weather";
+import { Container } from 'react-bootstrap';
+import ForecastCard from './ForecastCard';
 
 
 
 const API_Key = "3bd8c061d50496738722309b7ed91dda";
 const days = []
+const daysString = {
+    0: 'Sun',
+    1: 'Mon',
+    2: 'Tues',
+    3: 'Wed',
+    4: 'Thurs',
+    5: 'Fri',
+    6: 'Sat'
+}
 
 export default function Forecast(props) {
 
@@ -14,6 +26,8 @@ export default function Forecast(props) {
     const [description, getDescription] = useState()
     const [input, setInput] = useState(0)
     const [time, getTime] = useState()
+    const [day, getDay] = useState([])
+
 
 
     useEffect(() => {
@@ -28,6 +42,20 @@ export default function Forecast(props) {
             if (response.cod !== "200") {
                 return
             }
+
+            function getdate() {
+                let fiveDay = []
+                let getToday = new Date()
+                let day1 = getToday.getDay()
+                for (let i = day1; i < day1 + 5; i++) {
+                    fiveDay.push(daysString[i])
+                }
+                return fiveDay
+            }
+
+            const forecast = getdate()
+
+            getDay([...forecast])
 
             // setTempMin(response.main.temp_min)
 
@@ -50,12 +78,14 @@ export default function Forecast(props) {
             }
 
 
+
             let days = splitDays(response.list, 8)
             console.log(days, 'days')
             //location of the temp_min 
             // console.log(day1[0].main.temp_min)
             // let max = Math.max(...hours)
             // max: max
+
             function findMin(days) {
                 let day_min = []
                 for (let i = 0; i < days.length; i++) {
@@ -68,23 +98,46 @@ export default function Forecast(props) {
                 return day_min;
             }
 
+            function findMax(days) {
+                let day_max = [];
+                for (let i = 0; i < days.length; i++) {
+                    let day = days[i]
+                    let hours = day.map(hour => hour.main.temp_max)
 
-            const result = findMin(days).map(item => <div>{item.min}</div>)
-            console.log(result, 'result')
+                    let max = Math.max(...hours)
+                    day_max.push({ max: max });
+                }
+                return day_max;
+            }
 
-            setTempMin([...result])
+
+            const min = findMin(days).map(item =>
+                <div>{getFahrenheit(item.min)}</div>
+            )
+
+            const max = findMax(days).map(item =>
+                <div> {getFahrenheit(item.max)} </div>)
+
+            setTempMin([...min])
+            setTempMax([...max])
             // tempMin = [...result]
-
         }
         getforecast();
     }, [props.tempCity]);
 
     return (
-        <div>
-            <h2> {tempMin} </h2>
-            <h3>
-                {props.tempCity}
-            </h3>
-        </div>
+        <body className="forecast">
+            <Container className="forecast">
+                <div class="d-flex flex-row d-flex justify-content-around">
+                    <ForecastCard tempMin={tempMin} tempMax={tempMax} day={day} />
+                </div>
+            </Container >
+        </body>
+
+
+
+
     )
 }
+
+

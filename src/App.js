@@ -4,7 +4,8 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'weather-icons/css/weather-icons.css';
 import { Container, Button, InputGroup, Form, Col, FormControl, Row } from 'react-bootstrap';
-import Forecast from './component/Forecast'
+import Forecast from './component/Forecast';
+
 
 //api.openweathermap.org/data/2.5/weather?q=London,uk
 const API_Key = "d06db66101a950f6afc113f4474df923";
@@ -23,6 +24,7 @@ const icon1 = {
   Clear: "wi-day-sunny",
   Clouds: "wi-day-fog"
 };
+
 
 function App() {
   const [currentTemp, setCurrentTemp] = useState()
@@ -85,10 +87,6 @@ function App() {
   // }
   // console.log(setCity)
 
-
-
-
-
   return (
     <div className="App " >
       <header className="App-header background" role="main" style={{
@@ -113,6 +111,7 @@ function App() {
 
       </header>
       <Forecast tempCity={tempCity} />
+
     </div >
   );
 }

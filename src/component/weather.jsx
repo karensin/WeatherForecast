@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from 'react-bootstrap/Button';
+import Forecast from "./Forecast";
 
 const scales = {
     KELVIN: 'kelvin',
@@ -85,13 +86,13 @@ const Weather = props => {
 }
 export default Weather;
 
-function calCelsius(newTemp) {
-    let cell = Math.floor(newTemp - 273.15);
-    return cell;
-}
 
-function getFahrenheit(newTemp) {
+export function getFahrenheit(newTemp) {
     const cell = calCelsius(newTemp)
     return Math.floor(cell * (9 / 5) + 32);
 }
 
+export function calCelsius(newTemp) {
+    let cell = Math.floor(newTemp - 273.15);
+    return cell;
+}
