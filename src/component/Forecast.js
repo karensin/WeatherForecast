@@ -9,13 +9,13 @@ import { icon1 } from '../App'
 const API_Key = "3bd8c061d50496738722309b7ed91dda";
 const days = []
 const daysString = {
+    0: 'Sun',
     1: 'Mon',
     2: 'Tues',
     3: 'Wed',
     4: 'Thurs',
     5: 'Fri',
     6: 'Sat',
-    7: 'Sun',
 
 }
 
@@ -50,7 +50,12 @@ export default function Forecast(props) {
                 let getToday = new Date()
                 let day1 = getToday.getDay()
                 for (let i = day1; i < day1 + 5; i++) {
-                    fiveDay.push(daysString[i])
+                    let k = i
+                    if (k >= 7) {
+                        k = k - 7
+
+                    }
+                    fiveDay.push(daysString[i, k])
                 }
                 return fiveDay
             }
