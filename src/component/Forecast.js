@@ -9,13 +9,14 @@ import { icon1 } from '../App'
 const API_Key = "3bd8c061d50496738722309b7ed91dda";
 const days = []
 const daysString = {
-    0: 'Sun',
     1: 'Mon',
     2: 'Tues',
     3: 'Wed',
     4: 'Thurs',
     5: 'Fri',
-    6: 'Sat'
+    6: 'Sat',
+    7: 'Sun',
+
 }
 
 

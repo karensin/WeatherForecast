@@ -77,7 +77,7 @@ const ForecastCard = (props) => (
             <Col className="forecastcards">
                 <Card >
                     <Card.Content>
-                        <Card.Header>{props.day[4]}  <i className="wi wi-snow " /> </Card.Header>
+                        <Card.Header>{props.day[4]} <i className="wi wi-snow " /> </Card.Header>
                         <Card.Meta>
                             <div className='min' > {props.tempMin[4]} </div>
                             <div className='max'> {props.tempMax[4]} </div>
