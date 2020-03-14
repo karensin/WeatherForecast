@@ -36,7 +36,7 @@ export default function Forecast(props) {
         console.log('useEffect Forecast called')
         const getforecast = async (e) => {
             //5 day forecast is available at any location or city. It includes weather data every 3 hours.
-            const api_call = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${props.tempCity}&appid=${API_Key}`);
+            const api_call = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${props.tempCity}&appid=${API_Key}`);
             //
             const response = await api_call.json();
             console.log(response)
