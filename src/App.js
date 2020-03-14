@@ -53,7 +53,7 @@ function App() {
     console.log('useEffect called')
     const getCurrentWeather = async (e) => {
 
-      const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${tempCity}&appid=${API_Key}`);
+      const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${tempCity}&appid=${API_Key}`);
       //5 day forecast is available at any location or city. It includes weather data every 3 hours.
 
       //
