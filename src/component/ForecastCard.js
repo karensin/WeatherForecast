@@ -2,7 +2,7 @@
 import React from 'react'
 import { Card, Icon, Image } from 'semantic-ui-react'
 import { Container, Row, Col } from 'react-bootstrap';
-
+import { icon1 } from '../App'
 
 const ForecastCard = (props) => (
 
@@ -12,7 +12,7 @@ const ForecastCard = (props) => (
                 <Card >
 
                     <Card.Content>
-                        <Card.Header> {props.day[0]} <i className="wi wi-snow" />  </Card.Header>
+                        <Card.Header> {props.day[0]} <i className={`wi ${icon1[props.description[0]]}`} />   </Card.Header>
                         <Card.Meta>
                             <div className='min' > {props.tempMin[0]} </div>
                             <div className='max'> {props.tempMax[0]} </div>
@@ -28,7 +28,7 @@ const ForecastCard = (props) => (
             <Col className="forecastcards">
                 <Card >
                     <Card.Content>
-                        <Card.Header> {props.day[1]}  <i className="wi wi-snow" />  </Card.Header>
+                        <Card.Header> {props.day[1]}<i className={`wi ${icon1[props.description[1]]}`} />  </Card.Header>
                         <Card.Meta>
                             <div className='min' > {props.tempMin[1]} </div>
                             <div className='max'> {props.tempMax[1]} </div>
@@ -44,7 +44,7 @@ const ForecastCard = (props) => (
             <Col className="forecastcards">
                 <Card >
                     <Card.Content>
-                        <Card.Header>{props.day[2]}  <i className="wi wi-snow" /> </Card.Header>
+                        <Card.Header>{props.day[2]} <i className={`wi ${icon1[props.description[2]]}`} /> </Card.Header>
                         <Card.Meta>
                             <div className='min' > {props.tempMin[2]} </div>
                             <div className='max'> {props.tempMax[2]} </div>
@@ -60,7 +60,7 @@ const ForecastCard = (props) => (
             <Col className="forecastcards">
                 <Card >
                     <Card.Content>
-                        <Card.Header> {props.day[3]}  <i className="wi wi-snow" /> </Card.Header>
+                        <Card.Header> {props.day[3]}  <i className={`wi ${icon1[props.description[3]]}`} /></Card.Header>
                         <Card.Meta>
                             <div className='min' > {props.tempMin[3]} </div>
                             <div className='max'> {props.tempMax[3]} </div>
@@ -77,7 +77,7 @@ const ForecastCard = (props) => (
             <Col className="forecastcards">
                 <Card >
                     <Card.Content>
-                        <Card.Header>{props.day[4]} <i className="wi wi-snow " /> </Card.Header>
+                        <Card.Header>{props.day[4]} <i className={`wi ${icon1[props.description[4]]}`} /> </Card.Header>
                         <Card.Meta>
                             <div className='min' > {props.tempMin[4]} </div>
                             <div className='max'> {props.tempMax[4]} </div>

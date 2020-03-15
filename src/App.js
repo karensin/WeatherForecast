@@ -90,7 +90,7 @@ function App() {
   return (
     <div className="App " >
       <header className="App-header background" role="main" style={{
-        background: `url("${process.env.PUBLIC_URL + 'background.jpg'}") no-repeat center / cover `
+        background: `url("${process.env.PUBLIC_URL + './background.jpg'}") no-repeat center / cover `
       }}  >
         <Container  >
           <Form onSubmit={onSubmitSearchCity}  >
@@ -110,6 +110,7 @@ function App() {
         </Container>
 
       </header>
+
       <Forecast tempCity={tempCity} />
 
     </div >

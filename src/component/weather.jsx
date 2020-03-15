@@ -57,7 +57,7 @@ const Weather = props => {
             <div className="cards"></div>
             <div className="cityHeader"> {props.city} </div>
             <h2 className="py-4">
-                <i className={`wi ${props.icon}`} />
+                <div className="icons"><i className={`wi ${props.icon}`} /></div>
             </h2>
             <h2 className="py-2"> Current {convertTemp(currentTemp)} </h2>
 

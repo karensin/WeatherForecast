@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { calCelsius, getFahrenheit } from "./weather";
 import { Container } from 'react-bootstrap';
 import ForecastCard from './ForecastCard';
-import { icon1 } from '../App'
+
 
 
 const API_Key = "3bd8c061d50496738722309b7ed91dda";
@@ -16,7 +16,6 @@ const daysString = {
     4: 'Thurs',
     5: 'Fri',
     6: 'Sat',
-
 }
 
 
@@ -53,7 +52,6 @@ export default function Forecast(props) {
                     let k = i
                     if (k >= 7) {
                         k = k - 7
-
                     }
                     fiveDay.push(daysString[i, k])
                 }
@@ -127,9 +125,12 @@ export default function Forecast(props) {
             setTempMin([...min])
             setTempMax([...max])
             getDescription([...desList])
+
+
             // tempMin = [...result]
         }
         getforecast();
+
     }, [props.tempCity]);
 
     return (
