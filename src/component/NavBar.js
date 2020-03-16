@@ -17,7 +17,7 @@ export default function NavBar() {
         <div>
             <Navbar.Brand className="navHeader float-left">Weather Forecast</Navbar.Brand>
             <Nav className="justify-content-end" activeKey="/home">
-                <Nav.Item>
+                <Nav.Item className="navHeader">
                     <Toggle className="navHeader"
                         onClick={onToggle}
                         on={<div className="buttonTextF">F &deg; </div>}

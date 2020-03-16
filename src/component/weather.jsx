@@ -13,59 +13,33 @@ const location = {
 }
 
 const Weather = props => {
-    function convertTemp(temp) {
-        let dec = ''
-        let newTemp
-
-        if (tempScale === scales.CELSIUS) {
-            newTemp = calCelsius(temp)
-            dec = 'C'
-        }
-        if (tempScale === scales.FAHRENHEIT) {
-            newTemp = getFahrenheit(temp)
-            dec = 'F'
-        }
-        if (tempScale === scales.KELVIN) {
-            newTemp = temp
-        }
-        return (
-            <div>
-                {newTemp} {dec} &deg;
-
-             </div>
-        );
-    }
     const { currentTemp, tempMin, tempMax, description } = props
-    //tempScale is the scale we want to convert to
-    const [tempScale, setTempScale] = useState(scales.FAHRENHEIT)
-    // const [location, setLocation]= useState(location.city) 
 
-    function onClickConvertScale() {
+    // function onClickConvertScale() {
 
-        if (tempScale === scales.FAHRENHEIT) {
-            setTempScale(scales.CELSIUS)
-        }
-        if (tempScale === scales.CELSIUS) {
-            setTempScale(scales.FAHRENHEIT)
-        }
+    //     if (tempScale === scales.FAHRENHEIT) {
+    //         setTempScale(scales.CELSIUS)
+    //     }
+    //     if (tempScale === scales.CELSIUS) {
+    //         setTempScale(scales.FAHRENHEIT)
+    //     }
 
-    }
+    // }
 
     return (
-
         < div className="container body">
             <div className="cards"></div>
             <div className="cityHeader"> {props.city} </div>
             <h2 className="py-4">
                 <div className="icons"><i className={`wi ${props.icon}`} /></div>
             </h2>
-            <h2 className="py-2"> Current {convertTemp(currentTemp)} </h2>
+            <h2 className="py-2"> Current {currentTemp} </h2>
 
             {/** show max n min temp*/}
             <div>
                 <h2 className=" d-flex justify-content-around">
-                    <div> min{convertTemp(tempMin)}</div>
-                    <div>max{convertTemp(tempMax)}</div>
+                    <div> min{tempMin}</div>
+                    <div>max{tempMax}</div>
                 </h2>
             </div>
 
@@ -74,25 +48,13 @@ const Weather = props => {
                 {description}
             </h3>
             <div className="d-flex justify-content-end">
-                <Button className="clear" variant="light" onClick={onClickConvertScale} > C / F </Button>
+                {/* <Button className="clear" variant="light" onClick={onClickConvertScale} > C / F </Button> */}
 
             </div>
         </div >
 
     );
 
-
-
 }
 export default Weather;
 
-
-export function getFahrenheit(newTemp) {
-    const cell = calCelsius(newTemp)
-    return Math.floor(cell * (9 / 5) + 32);
-}
-
-export function calCelsius(newTemp) {
-    let cell = Math.floor(newTemp - 273.15);
-    return cell;
-}
