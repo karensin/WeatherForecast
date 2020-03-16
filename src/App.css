@@ -34,16 +34,16 @@ header{
 .cityHeader{ 
   font-size: 37px;
   font-weight: normal;
-
+  padding-top: 50px;
 }
 
 h1 {
   padding-top: 50px;
 }
-div{
-  padding-top: 5px;
-} 
-
+ 
+.forecast.container{
+  padding-top:100px
+}
 .forecast {
   font-size: 20px;
   background-color: #425A70;
@@ -58,4 +58,40 @@ div{
 }
 .icons{
  font-size: 50px;
+}
+.btn.toggle.btn-lg.off.btn-primary{
+  border-radius:100px 10px;
+ 
+}
+.btn.toggle.btn-lg.btn-info{
+  border-radius:100px 10px;
+  border: 2px solid rgb(115, 207, 235);
+} 
+.buttonTextF{
+  font-weight: 700;
+  padding-left:20px;
+  
+}
+.buttonTextC{
+  font-weight: 700;
+  padding-right:20px;
+}
+
+.btn.toggle.navHeader.btn-lg.off.btn-primary{
+  background-color: rgba(53, 86, 124, 0.849);
+  border: 2px solid rgb(115, 207, 235);
+}
+
+.nav-item {
+  padding: 10px;
+}
+header.App-header.background {
+  padding-top: 100px;
+}
+
+span.navHeader.float-left.navbar-brand {
+  font-size: 30pt;
+  font-weight: 300;
+  padding-left: 30px;
+  color: rgba(255, 255, 255, 0.774);
 }
