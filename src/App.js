@@ -89,7 +89,7 @@ function App() {
     return (
         <div className="App " >
             <header className="App-header background" role="main" style={{
-                background: `url("${process.env.PUBLIC_URL + '/img/background.jpg'}") no-repeat center / cover `
+                background: `url("${process.env.PUBLIC_URL + '/img/rain_background.jpg'}") no-repeat center / cover `
             }}  >
                 <Container  >
                     <Form onSubmit={onSubmitSearchCity}  >
