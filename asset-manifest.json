@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/WeatherForecast/static/css/main.d64a9aff.chunk.css",
-    "main.js": "/WeatherForecast/static/js/main.14e9abb7.chunk.js",
-    "main.js.map": "/WeatherForecast/static/js/main.14e9abb7.chunk.js.map",
+    "main.css": "/WeatherForecast/static/css/main.940d4f11.chunk.css",
+    "main.js": "/WeatherForecast/static/js/main.05438eb6.chunk.js",
+    "main.js.map": "/WeatherForecast/static/js/main.05438eb6.chunk.js.map",
     "runtime-main.js": "/WeatherForecast/static/js/runtime-main.1c41d806.js",
     "runtime-main.js.map": "/WeatherForecast/static/js/runtime-main.1c41d806.js.map",
     "static/css/2.369b747d.chunk.css": "/WeatherForecast/static/css/2.369b747d.chunk.css",
-    "static/js/2.40a679ed.chunk.js": "/WeatherForecast/static/js/2.40a679ed.chunk.js",
-    "static/js/2.40a679ed.chunk.js.map": "/WeatherForecast/static/js/2.40a679ed.chunk.js.map",
+    "static/js/2.7ee7886a.chunk.js": "/WeatherForecast/static/js/2.7ee7886a.chunk.js",
+    "static/js/2.7ee7886a.chunk.js.map": "/WeatherForecast/static/js/2.7ee7886a.chunk.js.map",
     "index.html": "/WeatherForecast/index.html",
-    "precache-manifest.1363a56e5f84996ce35c07e56d277f9f.js": "/WeatherForecast/precache-manifest.1363a56e5f84996ce35c07e56d277f9f.js",
+    "precache-manifest.f6d79bdb7bbdc4dcbabe34255539e013.js": "/WeatherForecast/precache-manifest.f6d79bdb7bbdc4dcbabe34255539e013.js",
     "service-worker.js": "/WeatherForecast/service-worker.js",
     "static/css/2.369b747d.chunk.css.map": "/WeatherForecast/static/css/2.369b747d.chunk.css.map",
-    "static/css/main.d64a9aff.chunk.css.map": "/WeatherForecast/static/css/main.d64a9aff.chunk.css.map",
-    "static/js/2.40a679ed.chunk.js.LICENSE.txt": "/WeatherForecast/static/js/2.40a679ed.chunk.js.LICENSE.txt",
+    "static/css/main.940d4f11.chunk.css.map": "/WeatherForecast/static/css/main.940d4f11.chunk.css.map",
+    "static/js/2.7ee7886a.chunk.js.LICENSE.txt": "/WeatherForecast/static/js/2.7ee7886a.chunk.js.LICENSE.txt",
     "static/media/weather-icons.css": "/WeatherForecast/static/media/weathericons-regular-webfont.ecaf8b48.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.1c41d806.js",
     "static/css/2.369b747d.chunk.css",
-    "static/js/2.40a679ed.chunk.js",
-    "static/css/main.d64a9aff.chunk.css",
-    "static/js/main.14e9abb7.chunk.js"
+    "static/js/2.7ee7886a.chunk.js",
+    "static/css/main.940d4f11.chunk.css",
+    "static/js/main.05438eb6.chunk.js"
   ]
 }
