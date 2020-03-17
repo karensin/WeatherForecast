@@ -59,14 +59,20 @@ h1 {
 .icons{
  font-size: 50px;
 }
-.btn.toggle.btn-lg.off.btn-primary{
-  border-radius:100px 10px;
- 
+.btn.toggle.btn-lg.off.btn-default{
+  border-radius:10px 10px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
 }
-.btn.toggle.btn-lg.btn-info{
+.btn.toggle.btn-lg.btn-default{
   border-radius:100px 10px;
-  border: 2px solid rgb(115, 207, 235);
+  top: 8px;
+  right: 8px;
+  position: absolute;
+
 } 
+
 .buttonTextF{
   font-weight: 700;
   padding-left:20px;
@@ -77,11 +83,15 @@ h1 {
   padding-right:20px;
 }
 
-.btn.toggle.navHeader.btn-lg.off.btn-primary{
-  background-color: rgba(53, 86, 124, 0.849);
-  border: 2px solid rgb(115, 207, 235);
-}
+span.btn.toggle-off.btn-lg.btn-default{
+  border: 1px solid rgb(134, 134, 90);
+  color : white
 
+}
+span.btn.toggle-on.btn-lg.btn-default{
+  border: 1px solid rgb(134, 134, 90);
+  color : white
+}
 .nav-item {
   padding: 10px;
 }
