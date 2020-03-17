@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { Card } from 'semantic-ui-react'
 import { Container, Row, Col } from 'react-bootstrap';
 import { icon1 } from '../App'
 

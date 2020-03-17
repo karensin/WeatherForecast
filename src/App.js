@@ -1,9 +1,9 @@
 import Weather from './component/weather'
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'weather-icons/css/weather-icons.css';
-import { Container, Button, InputGroup, Form, Col, FormControl, Row } from 'react-bootstrap';
+import { Container, Button, Form, Col } from 'react-bootstrap';
 import Forecast from './component/Forecast';
 import Toggle from 'react-bootstrap-toggle';
 import Footer from './component/Footer';
@@ -25,6 +25,7 @@ export const icon1 = {
     Clear: "wi-day-sunny",
     Clouds: "wi-day-fog"
 };
+
 const Scales = {
     KELVIN: 'kelvin',
     CELSIUS: 'celsius',
@@ -52,7 +53,6 @@ const daysString = {
 }
 
 function App() {
-
     const [currentTemp, setCurrentTemp] = useState()
     const [city, setCity] = useState(location.city);
     const [tempCity, setTempCity] = useState(location.city);
@@ -92,7 +92,7 @@ function App() {
         );
     }
 
-    function onToggle(e) {
+    function onToggle() {
         let newState = !toggleActive
         let newTempScale = newState ? Scales.FAHRENHEIT : Scales.CELSIUS;
         setTempScale(newTempScale)
@@ -148,7 +148,7 @@ function App() {
                     if (k >= 7) {
                         k = k - 7
                     }
-                    fiveDay.push(daysString[i, k])
+                    fiveDay.push(daysString[i])
                 }
                 return fiveDay
             }
@@ -194,9 +194,7 @@ function App() {
             }
 
             const desList = [days[0][0].weather[0].main, days[1][0].weather[0].main, days[2][0].weather[0].main, days[3][0].weather[0].main, days[4][0].weather[0].main]
-
             const min = findMin(days).map(item => item.min)
-
             const max = findMax(days).map(item => item.max)
 
             setTempMins([...min])
@@ -208,7 +206,6 @@ function App() {
     }, [tempCity]);
 
     const min_divs = tempMins.map(item => <div>{convertTemp(item)}</div>)
-
     const max_divs = tempMaxes.map(item => <div> {convertTemp(item)} </div>)
 
     let backgroundUrl = '/img/blue-and-white-milky-way.jpg';
@@ -227,6 +224,8 @@ function App() {
         case 'snow':
             backgroundUrl = '/img/snow.jpg';
             break;
+        default:
+            break;
     }
 
     return (
@@ -234,8 +233,8 @@ function App() {
             <div className="d-flex justify-content-end ">
                 <Toggle className="d-flex justify-content-end"
                     onClick={onToggle}
-                    on={<div className="buttonTextF"> F ° </div>}
-                    off={<div className="buttonTextC">C °  </div>}
+                    on={<div className="buttonTextF"> F °</div>}
+                    off={<div className="buttonTextC">C °</div>}
                     size="lg"
                     offstyle="default"
                     onstyle="default"

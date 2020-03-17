@@ -1,19 +1,11 @@
-import React, { useState } from "react";
-import Button from 'react-bootstrap/Button';
-import Forecast from "./Forecast";
-
-const scales = {
-    KELVIN: 'kelvin',
-    CELSIUS: 'celsius',
-    FAHRENHEIT: 'fahrenheit'
-}
+import React from "react";
 
 const Weather = props => {
     const { currentTemp, tempMin, tempMax, description, city } = props
 
     return (
         <div className="container body" style={{
-            'text-shadow': '2px 2px rgba(150, 150, 150)'
+            textShadow: '2px 2px rgba(150, 150, 150)'
         }}>
             <div className="cards"></div>
             <div className="cityHeader"> {city} </div>
