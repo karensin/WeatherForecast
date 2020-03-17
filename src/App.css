@@ -113,7 +113,36 @@ span.navHeader.float-left.navbar-brand {
   padding-left: 30px;
   color: rgba(255, 255, 255, 0.774);
 }
-.container{
-  min-width: 800px;
-  max-height: 1000px;
+.forecast.container{
+  min-width: 934px;
+  max-height: 467;
+}
+.forecastTitle{
+  font-weight: 200;
+  font-size: 30px;
+  color: white;
+}
+marquee{
+  width:1500px ;
+
+}
+.pageFooter{
+  color: white
+}
+.contactsList{
+  padding: 10px;
+  margin: 10px;
+}
+svg{
+  margin-right:25px
+}
+.connect{
+  padding-top: 50px;
+  font-size: 20px;
+  font-weight: 200;
+}
+.copyright{
+  font-size: 12px;
+  font-weight: 200;
+  padding-bottom: 10px;
 }

@@ -6,7 +6,7 @@ import 'weather-icons/css/weather-icons.css';
 import { Container, Button, InputGroup, Form, Col, FormControl, Row } from 'react-bootstrap';
 import Forecast from './component/Forecast';
 import Toggle from 'react-bootstrap-toggle';
-import NavBar from './component/NavBar';
+import Footer from './component/Footer';
 
 
 //api.openweathermap.org/data/2.5/weather?q=London,uk
@@ -265,7 +265,7 @@ function App() {
         />
       </div>
       <header className="App-header background" role="main" style={{
-        background: `url("${process.env.PUBLIC_URL + '/img/rain_background.jpg'}") no-repeat center / cover `
+        background: `url("${process.env.PUBLIC_URL + '/img/blue-and-white-milky-way.jpg'}") no-repeat center / cover `
       }}  >
 
         <Container>
@@ -288,9 +288,11 @@ function App() {
 
         </Container>
       </header>
-      <Forecast tempCity={tempCity} tempMins={min_divs} tempMaxes={max_divs} day={day} descriptions={descriptions} />
 
+      <Forecast tempCity={tempCity} tempMins={min_divs} tempMaxes={max_divs} day={day} descriptions={descriptions} />
+      <Footer />
     </div >
+
   );
 }
 
