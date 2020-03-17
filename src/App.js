@@ -69,13 +69,15 @@ function App() {
     // const [input, setInput] = useState(0)
     const [time, getTime] = useState()
     const [day, setDay] = useState([])
-    const [tempMins, setTempMins] = useState(0);
-    const [tempMaxes, setTempMaxes] = useState(0);
+    const [tempMins, setTempMins] = useState([]);
+    const [tempMaxes, setTempMaxes] = useState([]);
 
     const [toggleActive, setToggleActive] = useState(true)
     function convertTemp(temp) {
         let dec = ''
         let newTemp
+
+        console.log('temp is', tempScale)
 
         if (tempScale === Scales.CELSIUS) {
             newTemp = calCelsius(temp)
@@ -91,7 +93,6 @@ function App() {
         return (
             <div>
                 {newTemp} {dec} &deg;
-
             </div>
         );
     }
@@ -214,12 +215,13 @@ function App() {
 
             const desList = [days[0][0].weather[0].main, days[1][0].weather[0].main, days[2][0].weather[0].main, days[3][0].weather[0].main, days[4][0].weather[0].main]
 
-            const min = findMin(days).map(item =>
-                <div>{getFahrenheit(item.min)}</div>
+            const min = findMin(days).map(item => item.min
+                // <div>{convertTemp(item.min)}</div>
             )
 
-            const max = findMax(days).map(item =>
-                <div> {getFahrenheit(item.max)} </div>)
+            const max = findMax(days).map(item => item.max
+                // <div> {convertTemp(item.max)} </div>)
+            )
 
             console.log('min,max', min, max)
 
@@ -235,6 +237,13 @@ function App() {
     //   description={description} 
     // }
     // console.log(setCity)
+
+    const min_divs = tempMins.map(item =>
+        <div>{convertTemp(item)}</div>
+    )
+
+    const max_divs = tempMaxes.map(item =>
+        <div> {convertTemp(item)} </div>)
 
     return (
         <div className="App " >
@@ -274,7 +283,7 @@ function App() {
                 </Container>
             </header>
 
-            <Forecast tempCity={tempCity} tempMins={tempMins} tempMaxes={tempMaxes} day={day} descriptions={descriptions} />
+            <Forecast tempCity={tempCity} tempMins={min_divs} tempMaxes={max_divs} day={day} descriptions={descriptions} />
 
         </div >
     );
