@@ -60,37 +60,44 @@ h1 {
  font-size: 50px;
 }
 .btn.toggle.btn-lg.off.btn-default{
-  border-radius:10px 10px;
+  text-align: center;
   position: absolute;
   top: 8px;
   right: 8px;
+  padding: 0;
 }
 .btn.toggle.btn-lg.btn-default{
-  border-radius:100px 10px;
+  text-align: center;
   top: 8px;
   right: 8px;
   position: absolute;
-
+  padding: 0;
 } 
 
 .buttonTextF{
-  font-weight: 700;
-  padding-left:20px;
+  font-weight: 600;
+ 
   
 }
 .buttonTextC{
-  font-weight: 700;
-  padding-right:20px;
+  font-weight: 600;
 }
 
 span.btn.toggle-off.btn-lg.btn-default{
-  border: 1px solid rgb(134, 134, 90);
-  color : white
-
+  border: 1px solid rgb(218, 218, 208);
+  padding-right: 0;
+  padding-left: 0;
 }
 span.btn.toggle-on.btn-lg.btn-default{
-  border: 1px solid rgb(134, 134, 90);
-  color : white
+  border: 1px solid rgb(218, 218, 208);
+  padding-right: 0;
+  padding-left: 0;
+}
+span.btn {
+  color: white;
+}
+span.btn:hover {
+  background-color: white;
 }
 .nav-item {
   padding: 10px;

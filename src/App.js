@@ -256,14 +256,12 @@ function App() {
       <div className="d-flex justify-content-end ">
         <Toggle className="d-flex justify-content-end"
           onClick={onToggle}
-          on={<div className="buttonTextF">F   </div>}
-          off={<div className="buttonTextC">C  </div>}
+          on={<div className="buttonTextF"> F ° </div>}
+          off={<div className="buttonTextC">C °  </div>}
           size="lg"
           offstyle="default"
           onstyle="default"
           active={toggleActive}
-          height='30px'
-          width='25px'
         />
       </div>
       <header className="App-header background" role="main" style={{
