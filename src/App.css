@@ -3,6 +3,7 @@
   font-weight: 500;
   font-size: 1px ;
   background-color: #234361;
+
 }
 
 .App-logo {
@@ -111,4 +112,8 @@ span.navHeader.float-left.navbar-brand {
   font-weight: 300;
   padding-left: 30px;
   color: rgba(255, 255, 255, 0.774);
+}
+.container{
+  min-width: 800px;
+  max-height: 1000px;
 }
