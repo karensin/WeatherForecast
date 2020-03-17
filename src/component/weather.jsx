@@ -13,29 +13,16 @@ const location = {
 }
 
 const Weather = props => {
-    const { currentTemp, tempMin, tempMax, description } = props
-
-    // function onClickConvertScale() {
-
-    //     if (tempScale === scales.FAHRENHEIT) {
-    //         setTempScale(scales.CELSIUS)
-    //     }
-    //     if (tempScale === scales.CELSIUS) {
-    //         setTempScale(scales.FAHRENHEIT)
-    //     }
-
-    // }
+    const { currentTemp, tempMin, tempMax, description, city } = props
 
     return (
         < div className="container body">
             <div className="cards"></div>
-            <div className="cityHeader"> {props.city} </div>
+            <div className="cityHeader"> {city} </div>
             <h2 className="py-4">
                 <div className="icons"><i className={`wi ${props.icon}`} /></div>
             </h2>
             <h2 className="py-2"> Current {currentTemp} </h2>
-
-            {/** show max n min temp*/}
             <div>
                 <h2 className=" d-flex justify-content-around">
                     <div> min{tempMin}</div>
@@ -48,8 +35,6 @@ const Weather = props => {
                 {description}
             </h3>
             <div className="d-flex justify-content-end">
-                {/* <Button className="clear" variant="light" onClick={onClickConvertScale} > C / F </Button> */}
-
             </div>
         </div >
 

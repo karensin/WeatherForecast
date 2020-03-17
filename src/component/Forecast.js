@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState, useEffect, useRef } from 'react';
-// import { calCelsius, getFahrenheit } from "./weather";
 import { Container } from 'react-bootstrap';
 import ForecastCard from './ForecastCard';
 
