@@ -9,11 +9,11 @@ const scales = {
 }
 
 const Weather = props => {
-    const { currentTemp, tempMin, tempMax, description, city, color } = props
+    const { currentTemp, tempMin, tempMax, description, city } = props
 
     return (
         <div className="container body" style={{
-            color: color, 'text-shadow': '2px 2px rgba(150, 150, 150)'
+            'text-shadow': '2px 2px rgba(150, 150, 150)'
         }}>
             <div className="cards"></div>
             <div className="cityHeader"> {city} </div>

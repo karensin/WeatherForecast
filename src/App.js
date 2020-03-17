@@ -207,16 +207,11 @@ function App() {
         getCurrentWeather();
     }, [tempCity]);
 
-    const min_divs = tempMins.map(item =>
-        <div>{convertTemp(item)}</div>
-    )
+    const min_divs = tempMins.map(item => <div>{convertTemp(item)}</div>)
 
-    const max_divs = tempMaxes.map(item =>
-        <div> {convertTemp(item)} </div>)
+    const max_divs = tempMaxes.map(item => <div> {convertTemp(item)} </div>)
 
     let backgroundUrl = '/img/blue-and-white-milky-way.jpg';
-    let color = 'white';
-    console.log(weatherMain)
     switch (weatherMain.toLowerCase()) {
         case 'drizzle':
         case 'rain':
@@ -224,16 +219,13 @@ function App() {
             break;
         case 'clouds':
             backgroundUrl = '/img/cloudy2.jpg';
-            // color = 'black';
             break;
         case 'clear':
         case 'sunny':
             backgroundUrl = '/img/sunny_background.jpg';
-            // color = 'black';
             break;
         case 'snow':
             backgroundUrl = '/img/snow.jpg';
-            color = 'black';
             break;
     }
 
@@ -265,7 +257,7 @@ function App() {
                             </Button>
                         </Form.Row>
                     </Form>
-                    <Weather color={color} icon={icon1[icon]} tempMin={convertTemp(tempMin)} tempMax={convertTemp(tempMax)} city={city}
+                    <Weather icon={icon1[icon]} tempMin={convertTemp(tempMin)} tempMax={convertTemp(tempMax)} city={city}
                         description={description} currentTemp={convertTemp(currentTemp)}
                     />
                 </Container>
