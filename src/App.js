@@ -93,9 +93,7 @@ function App() {
     }
 
     function onToggle(e) {
-
         let newState = !toggleActive
-
         let newTempScale = newState ? Scales.FAHRENHEIT : Scales.CELSIUS;
         setTempScale(newTempScale)
         setToggleActive(!toggleActive)
@@ -112,7 +110,6 @@ function App() {
 
     useEffect(() => {
         const getCurrentWeather = async (e) => {
-
             const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${tempCity}&appid=${API_Key}`);
             //5 day forecast is available at any location or city. It includes weather data every 3 hours.
 
@@ -218,16 +215,27 @@ function App() {
         <div> {convertTemp(item)} </div>)
 
     let backgroundUrl = '/img/blue-and-white-milky-way.jpg';
+    let color = 'white';
     console.log(weatherMain)
-    // switch (weatherMain.toLowerCase()) {
-    //     case 'drizzle':
-    //     case 'rain':
-    //     case ''
-
-    // clouds
-    // clear
-    // sunny
-    // }
+    switch (weatherMain.toLowerCase()) {
+        case 'drizzle':
+        case 'rain':
+            backgroundUrl = '/img/rain_background.jpg';
+            break;
+        case 'clouds':
+            backgroundUrl = '/img/cloudy2.jpg';
+            // color = 'black';
+            break;
+        case 'clear':
+        case 'sunny':
+            backgroundUrl = '/img/sunny_background.jpg';
+            // color = 'black';
+            break;
+        case 'snow':
+            backgroundUrl = '/img/snow.jpg';
+            color = 'black';
+            break;
+    }
 
     return (
         <div className="App " >
@@ -243,7 +251,7 @@ function App() {
                 />
             </div>
             <header className="App-header background" role="main" style={{
-                background: `url("${process.env.PUBLIC_URL + '/img/blue-and-white-milky-way.jpg'}") no-repeat center / cover `
+                background: `url("${process.env.PUBLIC_URL + backgroundUrl}") no-repeat center / cover `
             }}  >
                 <Container>
                     <Form onSubmit={onSubmitSearchCity}  >
@@ -257,7 +265,7 @@ function App() {
                             </Button>
                         </Form.Row>
                     </Form>
-                    <Weather icon={icon1[icon]} tempMin={convertTemp(tempMin)} tempMax={convertTemp(tempMax)} city={city}
+                    <Weather color={color} icon={icon1[icon]} tempMin={convertTemp(tempMin)} tempMax={convertTemp(tempMax)} city={city}
                         description={description} currentTemp={convertTemp(currentTemp)}
                     />
                 </Container>

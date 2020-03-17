@@ -1,148 +1,154 @@
 .App {
-  text-align: center;
-  font-weight: 500;
-  font-size: 1px ;
-  background-color: #234361;
-
+    text-align: center;
+    font-weight: 500;
+    font-size: 1px;
+    background-color: #234361;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 50vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  background-color: #234361;
+    background-color: #282c34;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: #234361;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
-
-header{
-  background-color: grey;
-  background-blend-mode: screen, difference, lighten;
+header {
+    background-color: grey;
+    background-blend-mode: screen, difference, lighten;
 }
 
-.cityHeader{ 
-  font-size: 37px;
-  font-weight: normal;
-  padding-top: 50px;
+.cityHeader {
+    font-size: 37px;
+    font-weight: normal;
+    padding-top: 50px;
 }
 
 h1 {
-  padding-top: 50px;
+    padding-top: 50px;
 }
- 
-.forecast.container{
-  padding-top:100px
+
+.forecast.container {
+    padding-top: 100px
 }
+
 .forecast {
-  font-size: 20px;
-  background-color: #425A70;
-  min-height: 50vh;
-  color: white
+    font-size: 20px;
+    background-color: #425A70;
+    min-height: 50vh;
+    color: white
 }
 
-.forecastcards.col{
-  width: 20%;
-  max-width: 25%;
-  height: fit-content;
-}
-.icons{
- font-size: 50px;
-}
-.btn.toggle.btn-lg.off.btn-default{
-  text-align: center;
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  padding: 0;
-}
-.btn.toggle.btn-lg.btn-default{
-  text-align: center;
-  top: 8px;
-  right: 8px;
-  position: absolute;
-  padding: 0;
-} 
-
-.buttonTextF{
-  font-weight: 600;
- 
-  
-}
-.buttonTextC{
-  font-weight: 600;
+.forecastcards.col {
+    width: 20%;
+    max-width: 25%;
+    height: fit-content;
 }
 
-span.btn.toggle-off.btn-lg.btn-default{
-  border: 1px solid rgb(218, 218, 208);
-  padding-right: 0;
-  padding-left: 0;
+.icons {
+    font-size: 50px;
 }
-span.btn.toggle-on.btn-lg.btn-default{
-  border: 1px solid rgb(218, 218, 208);
-  padding-right: 0;
-  padding-left: 0;
+
+.btn.toggle.btn-lg.off.btn-default {
+    text-align: center;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 0;
 }
-span.btn {
-  color: white;
+
+.btn.toggle.btn-lg.btn-default {
+    text-align: center;
+    top: 8px;
+    right: 8px;
+    position: absolute;
+    padding: 0;
 }
-span.btn:hover {
-  background-color: white;
+
+.buttonTextF {
+    font-weight: 600;
 }
+
+.buttonTextC {
+    font-weight: 600;
+}
+
+span.btn.toggle-off, span.btn.toggle-on {
+    border: 1px solid rgb(218, 218, 208);
+    padding-right: 0;
+    padding-left: 0;
+    color: white;
+}
+
+span.btn.toggle-off:hover, span.btn.toggle-on:hover {
+    background-color: white;
+    color: black;
+}
+
 .nav-item {
-  padding: 10px;
+    padding: 10px;
 }
+
 header.App-header.background {
-  padding-top: 100px;
+    padding-top: 100px;
+    padding-bottom: 50px;
 }
 
 span.navHeader.float-left.navbar-brand {
-  font-size: 30pt;
-  font-weight: 300;
-  padding-left: 30px;
-  color: rgba(255, 255, 255, 0.774);
+    font-size: 30pt;
+    font-weight: 300;
+    padding-left: 30px;
+    color: rgba(255, 255, 255, 0.774);
 }
-.forecast.container{
-  min-width: 934px;
-  max-height: 467;
-}
-.forecastTitle{
-  font-weight: 200;
-  font-size: 30px;
-  color: white;
-}
-marquee{
-  width:1500px ;
 
+.forecast.container {
+    min-width: 934px;
+    max-height: 467;
 }
-.pageFooter{
-  color: white
+
+.forecastTitle {
+    font-weight: 200;
+    font-size: 30px;
+    color: white;
 }
-.contactsList{
-  padding: 10px;
-  margin: 10px;
+
+marquee {
+    width: 1500px;
 }
-svg{
-  margin-right:25px
+
+.pageFooter {
+    color: white
 }
-.connect{
-  padding-top: 50px;
-  font-size: 20px;
-  font-weight: 200;
+
+.contactsList {
+    padding: 10px;
+    margin: 10px;
 }
-.copyright{
-  font-size: 12px;
-  font-weight: 200;
-  padding-bottom: 10px;
+
+svg {
+    margin-right: 25px
+}
+
+.connect {
+    padding-top: 50px;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.copyright {
+    font-size: 12px;
+    font-weight: 200;
+    padding-bottom: 10px;
 }
