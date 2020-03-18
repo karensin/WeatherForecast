@@ -21,7 +21,7 @@ const Weather = props => {
             </div>
 
             {/* Weather description */}
-            <h3 className="py-3 ">
+            <h3 className="py-3">
                 {description}
             </h3>
             <div className="d-flex justify-content-end">

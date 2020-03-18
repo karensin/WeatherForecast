@@ -9,13 +9,12 @@ const ForecastCard = (props) => (
     <Container fluid={true}>
         <Row className='projectsBox'>
             <Col className="forecastcards">
-                <Card >
-
+                <Card>
                     <Card.Content>
                         <Card.Header> {props.day[0]} <i className={`wi ${icon1[props.description[0]]}`} />   </Card.Header>
-                        <Card.Meta>
-                            <div className='min' > {props.tempMin[0]} </div>
-                            <div className='max'> {props.tempMax[0]} </div>
+                        <Card.Meta textAlign="center" className="flex-container" >
+                            <div className='py-1' > {props.tempMin[0]} </div >
+                            <div className='py-1'> {props.tempMax[0]} </div >
                         </Card.Meta>
                         <Card.Description>
                             {props.description[0]}
@@ -29,9 +28,9 @@ const ForecastCard = (props) => (
                 <Card >
                     <Card.Content>
                         <Card.Header> {props.day[1]}<i className={`wi ${icon1[props.description[1]]}`} />  </Card.Header>
-                        <Card.Meta>
-                            <div className='min' > {props.tempMin[1]} </div>
-                            <div className='max'> {props.tempMax[1]} </div>
+                        <Card.Meta textAlign="center" className="flex-container" >
+                            <div className='py-1' > {props.tempMin[1]} </div>
+                            <div className='py-1'> {props.tempMax[1]} </div>
                         </Card.Meta>
                         <Card.Description>
                             {props.description[1]}
@@ -45,9 +44,9 @@ const ForecastCard = (props) => (
                 <Card >
                     <Card.Content>
                         <Card.Header>{props.day[2]} <i className={`wi ${icon1[props.description[2]]}`} /> </Card.Header>
-                        <Card.Meta>
-                            <div className='min' > {props.tempMin[2]} </div>
-                            <div className='max'> {props.tempMax[2]} </div>
+                        <Card.Meta textAlign="center" className="flex-container" >
+                            <div className='py-1' > {props.tempMin[2]} </div>
+                            <div className='py-1'> {props.tempMax[2]} </div>
                         </Card.Meta>
                         <Card.Description>
                             {props.description[2]}
@@ -61,9 +60,9 @@ const ForecastCard = (props) => (
                 <Card >
                     <Card.Content>
                         <Card.Header> {props.day[3]}  <i className={`wi ${icon1[props.description[3]]}`} /></Card.Header>
-                        <Card.Meta>
-                            <div className='min' > {props.tempMin[3]} </div>
-                            <div className='max'> {props.tempMax[3]} </div>
+                        <Card.Meta textAlign="center" className="flex-container" >
+                            <div className='py-1' > {props.tempMin[3]} </div>
+                            <div className='py-1'> {props.tempMax[3]} </div>
                         </Card.Meta>
                         <Card.Description>
                             {props.description[3]}
@@ -78,9 +77,9 @@ const ForecastCard = (props) => (
                 <Card >
                     <Card.Content>
                         <Card.Header>{props.day[4]} <i className={`wi ${icon1[props.description[4]]}`} /> </Card.Header>
-                        <Card.Meta>
-                            <div className='min' > {props.tempMin[4]} </div>
-                            <div className='max'> {props.tempMax[4]} </div>
+                        <Card.Meta textAlign="center" className="flex-container" >
+                            <div className='py-1' > {props.tempMin[4]} </div>
+                            <div className='py-1'> {props.tempMax[4]} </div>
                         </Card.Meta>
                         <Card.Description>
                             {props.description[4]}
