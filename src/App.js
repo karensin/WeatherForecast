@@ -148,15 +148,17 @@ function App() {
                     if (k >= 7) {
                         k = k - 7
                     }
-                    fiveDay.push(daysString[i])
+                    fiveDay.push(daysString[k])
                 }
+                console.log(fiveDay, 'getdate')
                 return fiveDay
+
             }
 
             const forecast = getdate()
 
             setDay([...forecast])
-
+            console.log(day)
             function splitDays(array, size) {
                 let days = []
                 let index = 0;

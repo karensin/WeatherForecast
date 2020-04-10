@@ -13,7 +13,7 @@ export default function Forecast(props) {
             </Container>
             <Container className="forecast">
                 <div className="d-flex flex-row d-flex justify-content-around">
-                    <ForecastCard tempMin={tempMins} tempMax={tempMaxes} day={day ? day : []} description={descriptions} />
+                    <ForecastCard tempMin={tempMins} tempMax={tempMaxes} day={day} description={descriptions} />
                 </div>
             </Container >
         </section>
